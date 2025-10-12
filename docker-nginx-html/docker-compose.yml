@@ -1,0 +1,9 @@
+version: "3.9"   # Docker Compose file version
+
+services:
+  web:   # Name of your service
+    image: nginx:alpine   # Use official lightweight Nginx image
+    ports:
+      - "8080:80"         # Map host port 8080 → container port 80
+    volumes:
+      - ./html:/usr/share/nginx/html:ro  # Mount local html folder to Nginx folder (read-only)
